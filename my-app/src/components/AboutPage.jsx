@@ -5,7 +5,7 @@ import PowerButton from "../subComponents/PowerButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
-import spaceman from "../assets/images/astronaut.png";
+import spaceman from "../assets/astronaut.png";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
