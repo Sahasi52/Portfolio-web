@@ -8,7 +8,7 @@ import { CrestKamon } from "./AllSvgs";
 import Intro from "./Intro";
 import { motion } from "framer-motion";
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -74,12 +74,11 @@ const SKILLS = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
 `;
-
 const rotate = keyframes`
-  from{
+  from {
     transform: rotate(0);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
 `;
@@ -123,25 +122,37 @@ const DarkDiv = styled.div`
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
 
+//Framer-motion configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0,
+      duration: 0.5,
+    },
+  },
+};
+
 const Main = () => {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
 
   return (
-    <MainContainer>
+    <MainContainer variants={container} initial="hidden" animate="show">
       <DarkDiv click={click} />
       <Container>
         <LogoComponent theme={click ? "dark" : "light"} />
         <SocialIcons theme={click ? "dark" : "light"} />
-        <Center click={click}>
+        <Center click={click} aria-label="Toggle intro">
           <CrestKamon
             onClick={handleClick}
             width={click ? 120 : 200}
             height={click ? 120 : 200}
             fill="currentColor"
           />
-          <span>click here</span>
+          <span style={{ marginTop: "1rem" }}>click here</span>
         </Center>
         <Contact
           click={click}
@@ -149,29 +160,73 @@ const Main = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Say hi...
           </motion.h2>
         </Contact>
         <ABOUT to="/about" click={click}>
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             About
           </motion.h2>
         </ABOUT>
         <WORK to="/work" click={click}>
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             Work
           </motion.h2>
         </WORK>
         <BottomBar>
           <SKILLS to="/skills" click={click}>
-            <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <motion.h2
+              initial={{
+                y: 200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
               My Skills.
             </motion.h2>
           </SKILLS>
         </BottomBar>
       </Container>
-      {click ? <Intro click={click} /> : null}
+      {click && <Intro click={click} />}
     </MainContainer>
   );
 };

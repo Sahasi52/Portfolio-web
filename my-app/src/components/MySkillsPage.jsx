@@ -6,8 +6,10 @@ import PowerButton from "../subComponents/PowerButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
+import BigTitle from "../subComponents/BigTitle";
+import { motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -17,7 +19,7 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Main = styled.div`
+const Main = styled(motion.div)`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
@@ -27,6 +29,7 @@ const Main = styled.div`
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
+  margin-top: 4rem;
 
   font-family: "Ubuntu Mono", monospace;
   display: flex;
@@ -76,15 +79,30 @@ const Description = styled.div`
   }
 `;
 
+//Framer-motion configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0,
+      duration: 0.5,
+    },
+  },
+};
+
 const MySkillsPage = () => {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Box>
+      <Box variants={container} initial="hidden" animate="show">
         <PowerButton />
         <LogoComponent theme="light" />
         <SocialIcons theme="light" />
         <ParticleComponent theme="light" />
-        <Main>
+        <Main
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           <Title>
             <Code width={40} height={40} />
             Coder
@@ -106,7 +124,10 @@ const MySkillsPage = () => {
             <p>CodeBlocks, IntelliJ etc.</p>
           </Description>
         </Main>
-        <Main>
+        <Main
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
           <Title>
             <Develope width={40} height={40} />
             Developer
@@ -127,6 +148,7 @@ const MySkillsPage = () => {
             </ul>
           </Description>
         </Main>
+        <BigTitle text="SKILLS" top="79%" right="30%" />
       </Box>
     </ThemeProvider>
   );

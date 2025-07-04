@@ -5,9 +5,11 @@ import PowerButton from "../subComponents/PowerButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
+import BigTitle from "../subComponents/BigTitle";
 import spaceman from "../assets/astronaut.png";
+import { delay, motion } from "framer-motion";
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -21,12 +23,17 @@ const float = keyframes`
 100% {transform: translateY(-10px)}
 `;
 
-const Astronaut = styled.div`
+const FloatWrapper = styled.div`
+  animation: ${float} 4s ease infinite;
+  width: 100%;
+  height: auto;
+`;
+
+const Astronaut = styled(motion.div)`
   position: absolute;
   top: 10%;
   right: 5%;
   width: 20vw;
-  animation: ${float} 4s ease infinite;
   img {
     width: 100%;
     height: auto;
@@ -50,22 +57,53 @@ const Main = styled.div`
 
   position: absolute;
   left: calc(5rem + 5vw);
-  top: 7rem;
+  top: 8rem;
 
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
 `;
 
+//Framer-motion configuration
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0,
+      duration: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 1,
+      delay: 0.5,
+    },
+  },
+};
+
 const AboutPage = () => {
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box>
+      <Box variants={container} initial="hidden" animate="show">
         <PowerButton />
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <ParticleComponent theme="dark" />
-        <Astronaut>
-          <img src={spaceman} alt="astronaut" />
+        <Astronaut variants={item} initial="hidden" animate="show">
+          <FloatWrapper>
+            <img
+              src={spaceman}
+              alt="Floating astronaut representing exploration"
+            />
+          </FloatWrapper>
         </Astronaut>
         <Main>
           I'm a full-stack developer who loves making fun, clean, and cool
@@ -80,6 +118,7 @@ const AboutPage = () => {
           <br />
           Email: siamsadikhasan52@gmail.com
         </Main>
+        <BigTitle text="ABOUT" top="7%" left="5%" />
       </Box>
     </ThemeProvider>
   );

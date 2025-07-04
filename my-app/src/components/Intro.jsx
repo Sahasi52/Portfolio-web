@@ -60,7 +60,7 @@ const Text = styled.div`
 
   & > *:last-child {
     color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
-    font-size: cancelIdleCallback(0.5rem + 1.5vw);
+    font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
 `;
@@ -85,7 +85,11 @@ const Intro = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          <img className="pic" src={Me} alt="Profile Pic" />
+          <img
+            className="pic"
+            src={Me}
+            alt="SaHaSi - Web Developer Profile Picture"
+          />
         </motion.div>
       </SubBox>
     </Box>
