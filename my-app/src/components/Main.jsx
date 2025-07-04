@@ -4,7 +4,7 @@ import PowerButton from "../subComponents/PowerButton";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import { NavLink } from "react-router-dom";
-import { CrestKamon, CrestKamonFilled } from "./AllSvgs";
+import { CrestKamon } from "./AllSvgs";
 import Intro from "./Intro";
 import { motion } from "framer-motion";
 
@@ -132,15 +132,15 @@ const Main = () => {
     <MainContainer>
       <DarkDiv click={click} />
       <Container>
-        <PowerButton />
         <LogoComponent theme={click ? "dark" : "light"} />
         <SocialIcons theme={click ? "dark" : "light"} />
-        <Center click={click} onClick={handleClick}>
-          {click ? (
-            <CrestKamonFilled width={120} height={120} fill="currentColor" />
-          ) : (
-            <CrestKamon width={200} height={200} fill="currentColor" />
-          )}
+        <Center click={click}>
+          <CrestKamon
+            onClick={handleClick}
+            width={click ? 120 : 200}
+            height={click ? 120 : 200}
+            fill="currentColor"
+          />
           <span>click here</span>
         </Center>
         <Contact

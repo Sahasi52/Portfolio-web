@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Me from "../assets/Images/profile-img.png";
+import Me from "../assets/images/profile-img.png";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -47,31 +47,12 @@ const SubBox = styled.div`
     width: 100%;
     height: auto;
   }
-
-  /* Tablet */
-  @media (max-width: 768px) {
-    width: 45%;
-    .pic {
-      width: 50vw;
-      height: 50vh;
-    }
-  }
-
-  /* Mobile */
-  @media (max-width: 480px) {
-    width: 45%;
-    .pic {
-      width: 50vw;
-      height: 35vh;
-    }
-  }
 `;
 
 const Text = styled.div`
   font-size: calc(1rem + 1.5vw);
   color: ${(props) => props.theme.body};
   padding: 2rem;
-  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -81,16 +62,6 @@ const Text = styled.div`
     color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
     font-size: cancelIdleCallback(0.5rem + 1.5vw);
     font-weight: 300;
-  }
-
-  /* Tablet */
-  @media (max-width: 768px) {
-    font-size: calc(1.3rem + 2.5vw);
-  }
-
-  /* Mobile */
-  @media (max-width: 480px) {
-    font-size: calc(0.5rem + 3.5vw);
   }
 `;
 
