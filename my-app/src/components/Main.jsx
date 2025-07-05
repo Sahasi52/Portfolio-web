@@ -98,6 +98,11 @@ const SKILLS = styled(NavLink)`
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
+    margin-bottom: 16%;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    margin-bottom: 34%;
   }
 `;
 
@@ -138,8 +143,13 @@ const Center = styled.button`
   }
 
   @media (max-width: 768px) {
-    top: ${(props) => (props.click ? "89%" : "50%")};
-    left: ${(props) => (props.click ? "85%" : "50%")};
+    top: ${(props) => (props.click ? "84%" : "50%")};
+    left: ${(props) => (props.click ? "89%" : "50%")};
+  }
+
+  @media (max-width: 480px) {
+    top: ${(props) => (props.click ? "84%" : "50%")};
+    left: ${(props) => (props.click ? "86%" : "50%")};
   }
 
   @media (max-width: 480px) {
@@ -191,7 +201,7 @@ const Main = () => {
             height={click ? 120 : 200}
             fill="currentColor"
           />
-          <span style={{ marginTop: "1rem" }}>click here</span>
+          <span>click here</span>
         </Center>
         <Contact
           click={click}

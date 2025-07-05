@@ -40,7 +40,7 @@ const Astronaut = styled(motion.div)`
   }
 
   @media (max-width: 768px) {
-    top: 5%;
+    top: 2%;
     right: 2%;
     width: 35vw;
   }
@@ -82,8 +82,8 @@ const Main = styled.div`
   @media (max-width: 480px) {
     height: 55vh;
     left: calc(3.5rem + 3.5vw);
-    font-size: calc(0.8rem + 1.1vw);
-    top: 12rem;
+    font-size: calc(0.7rem + 1.2vw);
+    top: 11rem;
   }
 `;
 
@@ -142,7 +142,7 @@ const AboutPage = () => {
           <br />
           Email: siamsadikhasan52@gmail.com
         </Main>
-        <BigTitle text="ABOUT" top="11%" left="5%" />
+        <BigTitle text="ABOUT" top="13%" left="0%" />
       </Box>
     </ThemeProvider>
   );

@@ -10,10 +10,10 @@ import configLight from "../config/particlesjs-config-light.json";
 import AmongUs from "../config/tsparticles-config.json";
 
 const Box = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
   bottom: 0;
   z-index: 0;
 `;
@@ -23,14 +23,8 @@ const ParticleComponent = ({ theme }) => {
     await loadFull(engine);
   }, []);
 
-  let config;
-  if (theme === "sus") {
-    config = AmongUs;
-  } else if (theme === "light") {
-    config = configLight;
-  } else {
-    config = configDark;
-  }
+  const config =
+    theme === "sus" ? AmongUs : theme === "light" ? configLight : configDark;
 
   return (
     <Box>

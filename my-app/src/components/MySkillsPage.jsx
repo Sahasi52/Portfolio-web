@@ -20,7 +20,6 @@ const Box = styled(motion.div)`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    padding: 1rem;
   }
 `;
 
@@ -48,8 +47,7 @@ const Main = styled(motion.div)`
 
   @media (max-width: 768px) {
     width: 50vw;
-    height: 60vh;
-    margin-top: 5rem;
+    height: auto;
   }
 `;
 
@@ -167,7 +165,7 @@ const MySkillsPage = () => {
             </ul>
           </Description>
         </Main>
-        <BigTitle text="SKILLS" top="79%" right="5%" />
+        <BigTitle text="SKILLS" top="79%" right="0%" />
       </Box>
     </ThemeProvider>
   );

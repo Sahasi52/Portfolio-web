@@ -18,11 +18,11 @@ const Box = styled(motion.div)`
   align-items: center;
 
   @media (max-width: 768px) {
-    height: calc(230vh + (${Work.length} * 20vw));
+    height: calc(270vh + (${Work.length} * 20vw));
   }
 
   @media (max-width: 480px) {
-    height: calc(300vh + (${Work.length} * 20vw));
+    height: calc(350vh + (${Work.length} * 20vw));
   }
 `;
 
@@ -38,11 +38,11 @@ const Main = styled(motion.ul)`
   z-index: 5;
 
   @media (max-width: 768px) {
-    top: 19rem;
+    top: 17rem;
   }
 
   @media (max-width: 480px) {
-    top: 15rem;
+    top: 13rem;
   }
 `;
 
@@ -93,7 +93,7 @@ const WorkPage = () => {
             <Card key={d.id} data={d} />
           ))}
         </Main>
-        <BigTitle text="WORK" top="13%" right="21%" />
+        <BigTitle text="WORK" top="15%" right="21%" />
       </Box>
     </ThemeProvider>
   );

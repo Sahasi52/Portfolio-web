@@ -11,6 +11,7 @@ const Power = styled.button`
   transform: translate(-50%, 0);
 
   background-color: #fcf6f4;
+  color: #000;
   padding: 0.3rem;
   border-radius: 50%;
   border: 1px solid #000;
@@ -32,10 +33,6 @@ const Power = styled.button`
   & > *:first-child {
     text-decoration: none;
     color: inherit;
-  }
-
-  @media (max-width: 768px) {
-    left: 48%;
   }
 `;
 

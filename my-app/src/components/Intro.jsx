@@ -33,7 +33,6 @@ const Box = styled(motion.div)`
   @media (max-width: 768px) {
     flex-direction: column;
     width: 65vw;
-    height: auto;
   }
 `;
 
@@ -46,7 +45,7 @@ const SubBox = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: -1rem;
   }
 
   .pic {
