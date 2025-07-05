@@ -25,7 +25,7 @@ const Box = styled(motion.div)`
   }
 
   @media (max-width: 480px) {
-    height: 180vh;
+    height: 170vh;
     flex-direction: column;
   }
 `;
