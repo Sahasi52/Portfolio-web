@@ -20,7 +20,7 @@ const Box = styled(motion.div)`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    height: 140vh;
+    height: 160vh;
     flex-direction: column;
   }
 
@@ -80,7 +80,7 @@ const Title = styled.div`
   }
 
   @media (max-width: 768px) {
-    font-size: calc(1.4rem + 1.6vw);
+    font-size: calc(1.2rem + 1.4vw);
   }
 `;
 
@@ -108,7 +108,7 @@ const Description = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: calc(0.8rem + 1.6vw);
+    font-size: calc(0.6rem + 1.4vw);
   }
 `;
 
