@@ -27,6 +27,11 @@ const Box = styled(motion.li)`
     width: 18rem;
     height: 40vh;
   }
+
+  @media (max-width: 480px) {
+    width: 14rem;
+    height: 35vh;
+  }
 `;
 
 const Title = styled.h2`
@@ -37,7 +42,7 @@ const Title = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: calc(1rem + 0.6rem);
+    font-size: calc(1rem + 0.4rem);
   }
 `;
 
@@ -51,7 +56,7 @@ const Description = styled.h2`
   }
 
   @media (max-width: 480px) {
-    font-size: calc(0.8rem + 0.4rem);
+    font-size: calc(0.8rem + 0.2rem);
   }
 `;
 
@@ -75,7 +80,7 @@ const Tag = styled.span`
   }
 
   @media (max-width: 480px) {
-    font-size: calc(0.8rem + 0.4vw);
+    font-size: calc(0.8rem + 0.2vw);
   }
 `;
 
@@ -102,7 +107,7 @@ const Link = styled.a`
   }
 
   @media (max-width: 480px) {
-    font-size: calc(1rem + 0.6vw);
+    font-size: calc(1rem + 0.4vw);
   }
 `;
 

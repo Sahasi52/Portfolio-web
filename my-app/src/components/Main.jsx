@@ -102,7 +102,7 @@ const SKILLS = styled(NavLink)`
   }
   @media (max-width: 480px) {
     font-size: 0.9rem;
-    margin-bottom: 34%;
+    margin-bottom: 30%;
   }
 `;
 
@@ -201,7 +201,7 @@ const Main = () => {
             height={click ? 120 : 200}
             fill="currentColor"
           />
-          <span>click here</span>
+          <p>click here</p>
         </Center>
         <Contact
           click={click}

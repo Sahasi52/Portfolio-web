@@ -18,11 +18,11 @@ const Box = styled(motion.div)`
   align-items: center;
 
   @media (max-width: 768px) {
-    height: calc(270vh + (${Work.length} * 20vw));
+    height: calc(250vh + (${Work.length} * 20vw));
   }
 
   @media (max-width: 480px) {
-    height: calc(350vh + (${Work.length} * 20vw));
+    height: calc(330vh + (${Work.length} * 20vw));
   }
 `;
 
@@ -42,7 +42,7 @@ const Main = styled(motion.ul)`
   }
 
   @media (max-width: 480px) {
-    top: 13rem;
+    top: 15rem;
   }
 `;
 

@@ -17,8 +17,15 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 
   @media (max-width: 768px) {
+    height: 120vh;
+    flex-direction: column;
+  }
+
+  @media (max-width: 480px) {
+    height: 140vh;
     flex-direction: column;
   }
 `;
@@ -48,6 +55,7 @@ const Main = styled(motion.div)`
   @media (max-width: 768px) {
     width: 50vw;
     height: auto;
+    margin-top: 0;
   }
 `;
 
