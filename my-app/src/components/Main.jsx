@@ -6,7 +6,7 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { NavLink } from "react-router-dom";
 import { CrestKamon } from "./AllSvgs";
 import Intro from "./Intro";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 
 const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
@@ -102,7 +102,7 @@ const SKILLS = styled(NavLink)`
   }
   @media (max-width: 480px) {
     font-size: 0.9rem;
-    margin-bottom: 30%;
+    margin-bottom: 29%;
   }
 `;
 
@@ -132,6 +132,10 @@ const Center = styled.button`
   transition: all 1s ease;
 
   z-index: 3;
+
+  p {
+    color: #000;
+  }
 
   & > :first-child {
     animation: ${rotate} infinite 1.5s linear;
