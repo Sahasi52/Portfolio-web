@@ -17,6 +17,11 @@ const Box = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 
 const Main = styled(motion.div)`
@@ -40,6 +45,12 @@ const Main = styled(motion.div)`
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
   }
+
+  @media (max-width: 768px) {
+    width: 50vw;
+    height: 60vh;
+    margin-top: 5rem;
+  }
 `;
 
 const Title = styled.div`
@@ -56,6 +67,10 @@ const Title = styled.div`
 
   & > *:first-child {
     margin-right: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: calc(1.3rem + 1.5vw);
   }
 `;
 
@@ -76,6 +91,10 @@ const Description = styled.div`
   ul,
   p {
     margin-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: calc(0.5rem + 1.2vw);
   }
 `;
 
@@ -148,7 +167,7 @@ const MySkillsPage = () => {
             </ul>
           </Description>
         </Main>
-        <BigTitle text="SKILLS" top="79%" right="30%" />
+        <BigTitle text="SKILLS" top="79%" right="5%" />
       </Box>
     </ThemeProvider>
   );

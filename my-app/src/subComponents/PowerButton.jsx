@@ -33,6 +33,10 @@ const Power = styled.button`
     text-decoration: none;
     color: inherit;
   }
+
+  @media (max-width: 768px) {
+    left: 48%;
+  }
 `;
 
 const PowerButton = () => {

@@ -8,11 +8,10 @@ const Box = styled(motion.div)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
   width: 65vw;
   height: 55vh;
   display: flex;
-
+  flex-direction: row;
   background: linear-gradient(
         to right,
         ${(props) => props.theme.body} 50%,
@@ -27,17 +26,28 @@ const Box = styled(motion.div)`
       top;
   background-repeat: no-repeat;
   background-size: 100% 2px;
-
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.body};
-
   z-index: 1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 65vw;
+    height: auto;
+  }
 `;
 
 const SubBox = styled.div`
   width: 50%;
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 
   .pic {
     position: absolute;
@@ -46,22 +56,70 @@ const SubBox = styled.div`
     transform: translate(-50%, 0%);
     width: 100%;
     height: auto;
+
+    @media (max-width: 768px) {
+      transform: translate(-50%, 80%);
+      width: 76%;
+    }
+
+    @media (max-width: 480px) {
+      transform: translate(-50%, 90%);
+      width: 99%;
+    }
   }
 `;
 
 const Text = styled.div`
-  font-size: calc(1rem + 1.5vw);
+  font-size: calc(1rem + 1.2vw);
   color: ${(props) => props.theme.body};
   padding: 2rem;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: flex-start;
 
-  & > *:last-child {
+  h1 {
+    margin: 0;
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  h3 {
+    margin: 0.5rem 0;
+    font-size: calc(1rem + 0.8vw);
+  }
+
+  h6 {
     color: ${(props) => `rgba(${props.theme.bodyRgba}, 0.6)`};
-    font-size: calc(0.5rem + 1.5vw);
+    font-size: calc(0.8rem + 0.6vw);
     font-weight: 300;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+    font-size: calc(1.5rem + 1.3vw);
+  }
+
+  h3 {
+    font-size: calc(1.3rem + 1.1vw);
+  }
+
+  h6 {
+    font-size: calc(1.1rem + 0.9vw);
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+    font-size: calc(1.4rem + 1.2vw);
+  }
+
+  h3 {
+    font-size: calc(1.2rem + 1vw);
+  }
+
+  h6 {
+    font-size: calc(1rem + 0.8vw);
   }
 `;
 

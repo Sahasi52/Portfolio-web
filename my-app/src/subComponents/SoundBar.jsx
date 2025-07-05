@@ -25,6 +25,11 @@ const Box = styled.div`
   & > *:nth-child(5) {
     animation-delay: 0.6s;
   }
+
+  @media (max-width: 480px) {
+    left: 2rem;
+    top: 6rem;
+  }
 `;
 
 const play = keyframes`

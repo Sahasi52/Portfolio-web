@@ -27,6 +27,10 @@ const MainContainer = styled(motion.div)`
 
 const Container = styled.div`
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const Contact = styled.a`
@@ -36,6 +40,11 @@ const Contact = styled.a`
   right: calc(1rem + 2vw);
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    top: 2.5rem;
+    font-size: 1rem;
+  }
 `;
 
 const ABOUT = styled(NavLink)`
@@ -46,6 +55,10 @@ const ABOUT = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const WORK = styled(NavLink)`
@@ -56,6 +69,10 @@ const WORK = styled(NavLink)`
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const BottomBar = styled.div`
@@ -64,16 +81,26 @@ const BottomBar = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
   display: flex;
   justify-content: space-evenly;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const SKILLS = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   text-decoration: none;
   z-index: 1;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
+
 const rotate = keyframes`
   from {
     transform: rotate(0);
@@ -108,6 +135,18 @@ const Center = styled.button`
   & > :last-child {
     display: ${(props) => (props.click ? "none" : "inline-block")};
     padding-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    top: ${(props) => (props.click ? "89%" : "50%")};
+    left: ${(props) => (props.click ? "85%" : "50%")};
+  }
+
+  @media (max-width: 480px) {
+    & > :first-child {
+      width: ${(props) => (props.click ? "70px" : "120px")};
+      height: ${(props) => (props.click ? "70px" : "120px")};
+    }
   }
 `;
 

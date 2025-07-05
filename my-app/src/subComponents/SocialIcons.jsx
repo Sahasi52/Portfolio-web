@@ -18,6 +18,10 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.5rem 0;
   }
+
+  @media (max-width: 768px) {
+    left: 7%;
+  }
 `;
 
 const Line = styled(motion.span)`

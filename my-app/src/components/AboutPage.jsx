@@ -38,6 +38,16 @@ const Astronaut = styled(motion.div)`
     width: 100%;
     height: auto;
   }
+
+  @media (max-width: 768px) {
+    top: 5%;
+    right: 2%;
+    width: 35vw;
+  }
+
+  @media (max-width: 480px) {
+    width: 40vw;
+  }
 `;
 
 const Main = styled.div`
@@ -61,6 +71,20 @@ const Main = styled.div`
 
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
+
+  @media (max-width: 768px) {
+    height: 65vh;
+    left: calc(7rem + 6vw);
+    font-size: calc(1rem + 1.2vw);
+    top: 9rem;
+  }
+
+  @media (max-width: 480px) {
+    height: 55vh;
+    left: calc(3.5rem + 3.5vw);
+    font-size: calc(0.8rem + 1.1vw);
+    top: 12rem;
+  }
 `;
 
 //Framer-motion configuration
@@ -118,7 +142,7 @@ const AboutPage = () => {
           <br />
           Email: siamsadikhasan52@gmail.com
         </Main>
-        <BigTitle text="ABOUT" top="7%" left="5%" />
+        <BigTitle text="ABOUT" top="11%" left="5%" />
       </Box>
     </ThemeProvider>
   );

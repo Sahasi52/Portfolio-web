@@ -22,16 +22,37 @@ const Box = styled(motion.li)`
     color: ${(props) => props.theme.text};
     border: 1px solid ${(props) => props.theme.text};
   }
+
+  @media (max-width: 768px) {
+    width: 18rem;
+    height: 40vh;
+  }
 `;
 
 const Title = styled.h2`
   font-size: calc(0.8rem + 0.5rem);
+
+  @media (max-width: 768px) {
+    font-size: calc(1.1rem + 0.7rem);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(1rem + 0.6rem);
+  }
 `;
 
 const Description = styled.h2`
   font-size: calc(0.6rem + 0.3rem);
   font-family: "Karla", sans-serif;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: calc(0.9rem + 0.5rem);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.8rem + 0.4rem);
+  }
 `;
 
 const Tags = styled.div`
@@ -48,6 +69,14 @@ const Tags = styled.div`
 const Tag = styled.span`
   margin-right: 1rem;
   font-size: calc(0.6rem + 0.3vw);
+
+  @media (max-width: 768px) {
+    font-size: calc(0.9rem + 0.5vw);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(0.8rem + 0.4vw);
+  }
 `;
 
 const Footer = styled.footer`
@@ -66,6 +95,14 @@ const Link = styled.a`
   ${Box}:hover & {
     background-color: ${(props) => props.theme.text};
     color: ${(props) => props.theme.body};
+  }
+
+  @media (max-width: 768px) {
+    font-size: calc(1.1rem + 0.7vw);
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc(1rem + 0.6vw);
   }
 `;
 

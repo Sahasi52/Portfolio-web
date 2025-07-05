@@ -1,24 +1,50 @@
-import React from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
 import { lightTheme } from "./components/Themes";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
+import Loading from "./subComponents/LoadingComponent";
 
 function App() {
   const location = useLocation();
+  const [isLoading, setLoading] = useState(true);
+
+  //  useEffect(() => {
+  //     // Show loading on initial load
+  //     const timer = setTimeout(() => {
+  //       setLoading(false);
+  //     }, 1000);
+
+  //     return () => clearTimeout(timer);
+  //   }, []);
+
+  useEffect(() => {
+    // Trigger loading on initial load and route change
+    setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <ThemeProvider theme={lightTheme}>
       <>
         <GlobalStyle />
         <SoundBar />
-        {/* For framer-motion animation on page change! */}
-        <AnimatePresence mode="wait">
-          <Outlet location={location} key={location.pathname} />{" "}
-          {/* This renders Main, AboutPage, etc. */}
-        </AnimatePresence>
+
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <Suspense fallback={<Loading />}>
+            <AnimatePresence mode="wait">
+              <Outlet location={location} key={location.pathname} />
+            </AnimatePresence>
+          </Suspense>
+        )}
       </>
     </ThemeProvider>
   );

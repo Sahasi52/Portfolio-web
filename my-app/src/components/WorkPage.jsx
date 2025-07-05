@@ -16,6 +16,14 @@ const Box = styled(motion.div)`
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: calc(230vh + (${Work.length} * 20vw));
+  }
+
+  @media (max-width: 480px) {
+    height: calc(300vh + (${Work.length} * 20vw));
+  }
 `;
 
 const Main = styled(motion.ul)`
@@ -28,6 +36,14 @@ const Main = styled(motion.ul)`
 
   color: white;
   z-index: 5;
+
+  @media (max-width: 768px) {
+    top: 19rem;
+  }
+
+  @media (max-width: 480px) {
+    top: 15rem;
+  }
 `;
 
 //Framer-motion configuration
@@ -77,7 +93,7 @@ const WorkPage = () => {
             <Card key={d.id} data={d} />
           ))}
         </Main>
-        <BigTitle text="WORK" top="11%" right="20%" />
+        <BigTitle text="WORK" top="13%" right="21%" />
       </Box>
     </ThemeProvider>
   );
