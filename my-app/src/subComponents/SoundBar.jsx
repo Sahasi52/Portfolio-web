@@ -66,6 +66,7 @@ const SoundBar = () => {
       ref.current.pause();
     }
   };
+
   return (
     <Box onClick={() => handleClick()}>
       <Line click={click} />

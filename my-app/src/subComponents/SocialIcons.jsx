@@ -58,7 +58,7 @@ const SocialIcons = (props) => {
         transition={{ type: "spring", duration: 1, delay: 1.2 }}
       >
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/sadik-hasan-siam-9227bb373/"
           target="_blank"
           rel="noopener noreferrer"
           style={{ color: "inherit" }}
