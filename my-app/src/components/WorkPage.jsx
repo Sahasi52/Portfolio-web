@@ -15,11 +15,11 @@ const Box = styled(motion.div)`
   height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
 
   @media (max-width: 768px) {
-    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 40vh))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
   }
 
   @media (max-width: 480px) {
-    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 35vh))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
   }
 `;
 
