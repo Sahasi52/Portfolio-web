@@ -45,7 +45,7 @@ const SubBox = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin-bottom: -4.7rem;
+    margin-bottom: -4.5rem;
   }
 
   .pic {

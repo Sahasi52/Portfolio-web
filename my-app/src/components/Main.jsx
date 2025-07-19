@@ -98,11 +98,11 @@ const SKILLS = styled(NavLink)`
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
-    margin-bottom: 16%;
+    margin-bottom: 6%;
   }
   @media (max-width: 480px) {
     font-size: 0.9rem;
-    margin-bottom: 29%;
+    margin-bottom: 19%;
   }
 `;
 
