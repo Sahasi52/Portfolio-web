@@ -18,11 +18,11 @@ const Box = styled(motion.div)`
   align-items: center;
 
   @media (max-width: 768px) {
-    height: ${({ workLength }) => `calc(100vh + (${workLength} * 20vw))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 20vw))`};
   }
 
   @media (max-width: 480px) {
-    height: ${({ workLength }) => `calc(100vh + (${workLength} * 20vw))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 20vw))`};
   }
 `;
 
