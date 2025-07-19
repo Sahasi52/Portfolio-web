@@ -12,17 +12,17 @@ import { motion } from "framer-motion";
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
-  height: calc(100vh + (${Work.length} * 20vw));
+  height: ${({ workLength }) => `calc(100vh + (${workLength} * 20vw))`};
   position: relative;
   display: flex;
   align-items: center;
 
   @media (max-width: 768px) {
-    height: calc(200vh + (${Work.length} * 20vw));
+    height: ${({ workLength }) => `calc(100vh + (${workLength} * 20vw))`};
   }
 
   @media (max-width: 480px) {
-    height: calc(200vh + (${Work.length} * 20vw));
+    height: ${({ workLength }) => `calc(100vh + (${workLength} * 20vw))`};
   }
 `;
 
@@ -76,7 +76,12 @@ const WorkPage = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Box variants={container} initial="hidden" animate="show">
+      <Box
+        variants={container}
+        initial="hidden"
+        animate="show"
+        workLength={Work.length}
+      >
         <PowerButton />
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
