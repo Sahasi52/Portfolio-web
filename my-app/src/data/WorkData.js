@@ -23,12 +23,12 @@ export const Work = [
   },
   {
     id: 3,
-    name: "Ecommerce Website",
+    name: "Weather Forecast Website",
     description:
-      "A simple and responsive e-commerce frontend using HTML, CSS, and JavaScript.",
+      "A simple, responsive weather app using HTML, CSS, and JavaScript that shows real-time weather for any city using the OpenWeatherMap API.",
     tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://ecommerce-webb.netlify.app/",
-    github: "https://github.com/Sahasi52/Ecommerce-web",
+    demo: "https://weather-forecast-webb.netlify.app/",
+    github: "https://github.com/Sahasi52/Weather-Forecast-web",
   },
   {
     id: 4,
@@ -38,14 +38,5 @@ export const Work = [
     tags: ["React", "JavaScript"],
     demo: "https://portfolio-webbb.netlify.app/",
     github: "https://github.com/Sahasi52/Portfolio-web",
-  },
-  {
-    id: 5,
-    name: "Weather Forecast Website",
-    description:
-      "A simple, responsive weather app using HTML, CSS, and JavaScript that shows real-time weather for any city using the OpenWeatherMap API.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://weather-forecast-webb.netlify.app/",
-    github: "https://github.com/Sahasi52/Weather-Forecast-web",
   },
 ];
