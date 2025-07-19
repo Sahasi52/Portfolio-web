@@ -10,11 +10,12 @@ const GlobalStyle = createGlobalStyle`
     display: inline-block;
   }
 
-  body {
+  html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     font-family: 'Source Sans Pro', sans-serif;
+    background-color: #000;
   }
 
 `;

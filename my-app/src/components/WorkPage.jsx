@@ -15,11 +15,13 @@ const Box = styled(motion.div)`
   height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
 
   @media (max-width: 768px) {
-    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
+    min-height: ${({ workLength }) => `calc(100vh + ${workLength * 45}vh)`};
+    height: auto;
   }
 
   @media (max-width: 480px) {
-    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vh))`};
+    min-height: ${({ workLength }) => `calc(100vh + ${workLength * 45}vh)`};
+    height: auto;
   }
 `;
 
@@ -35,11 +37,13 @@ const Main = styled(motion.ul)`
   z-index: 5;
 
   @media (max-width: 768px) {
-    top: 17rem;
+    margin-top: 6rem;
+    padding: 1rem;
   }
 
   @media (max-width: 480px) {
-    top: 15rem;
+    margin-top: 5rem;
+    padding: 1rem;
   }
 `;
 
