@@ -98,11 +98,11 @@ const SKILLS = styled(NavLink)`
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
-    margin-bottom: 16%;
+    margin-bottom: 6%;
   }
   @media (max-width: 480px) {
     font-size: 0.9rem;
-    margin-bottom: 29%;
+    margin-bottom: 19%;
   }
 `;
 
@@ -147,12 +147,12 @@ const Center = styled.button`
   }
 
   @media (max-width: 768px) {
-    top: ${(props) => (props.click ? "84%" : "50%")};
+    top: ${(props) => (props.click ? "88%" : "50%")};
     left: ${(props) => (props.click ? "89%" : "50%")};
   }
 
   @media (max-width: 480px) {
-    top: ${(props) => (props.click ? "84%" : "50%")};
+    top: ${(props) => (props.click ? "88%" : "50%")};
     left: ${(props) => (props.click ? "86%" : "50%")};
   }
 
