@@ -13,7 +13,7 @@ const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
   width: 100vw;
   min-height: 100svh;
-  position: relative;
+  position: fixed;
   overflow: hidden;
 `;
 
