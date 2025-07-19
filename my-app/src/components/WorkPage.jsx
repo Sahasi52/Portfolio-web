@@ -19,7 +19,7 @@ const Box = styled(motion.div)`
   }
 
   @media (max-width: 480px) {
-    height: ${({ workLength }) => `calc(250dvh + (${workLength} * 30vw))`};
+    height: ${({ workLength }) => `calc(230dvh + (${workLength} * 30vw))`};
   }
 `;
 
