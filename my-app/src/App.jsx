@@ -10,12 +10,12 @@ import Loading from "./subComponents/LoadingComponent";
 function App() {
   const location = useLocation();
   const [isLoading, setLoading] = useState(true);
-  const [themeMode, setThemeMode] = useState("light");
+  const [themeMode, setThemeMode] = useState(() =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+  );
 
   useEffect(() => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    setThemeMode(prefersDark.matches ? "dark" : "light");
-
     const handleThemeChange = (e) => {
       setThemeMode(e.matches ? "dark" : "light");
     };
@@ -35,7 +35,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <ThemeProvider theme={themeMode === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={themeMode === "dark" ? darkTheme : lightTheme}>
       <>
         <GlobalStyle />
         <SoundBar />
