@@ -12,14 +12,14 @@ import { motion } from "framer-motion";
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
-  height: ${({ workLength }) => `calc(100dvh + (${workLength} * 20vw))`};
+  height: ${({ workLength }) => `calc(100dvh + (${workLength} * 45vw))`};
 
   @media (max-width: 768px) {
-    height: ${({ workLength }) => `calc(200dvh + (${workLength} * 25vw))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 40vw))`};
   }
 
   @media (max-width: 480px) {
-    height: ${({ workLength }) => `calc(230dvh + (${workLength} * 30vw))`};
+    height: ${({ workLength }) => `calc(100dvh + (${workLength} * 35vw))`};
   }
 `;
 
