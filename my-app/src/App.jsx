@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Suspense } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./globalStyles";
-import { darkTheme, lightTheme } from "./components/Themes";
+import { lightTheme } from "./components/Themes";
 import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
@@ -10,19 +10,17 @@ import Loading from "./subComponents/LoadingComponent";
 function App() {
   const location = useLocation();
   const [isLoading, setLoading] = useState(true);
-  const [themeMode, setThemeMode] = useState(() =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  );
+  const scrollablePages = ["/", "/about"];
 
   useEffect(() => {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleThemeChange = (e) => {
-      setThemeMode(e.matches ? "dark" : "light");
-    };
+    const currentPath = location.pathname.toLowerCase();
+    const isScrollable = scrollablePages.includes(currentPath);
+    document.body.style.overflowY = isScrollable ? "auto" : "hidden";
 
-    prefersDark.addEventListener("change", handleThemeChange);
-    return () => prefersDark.removeEventListener("change", handleThemeChange);
-  }, []);
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, [location.pathname]);
 
   useEffect(() => {
     setLoading(true);
@@ -35,7 +33,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <ThemeProvider theme={themeMode === "dark" ? darkTheme : lightTheme}>
+    <ThemeProvider theme={lightTheme}>
       <>
         <GlobalStyle />
         <SoundBar />

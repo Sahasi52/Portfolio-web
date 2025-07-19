@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     font-family: 'Source Sans Pro', sans-serif;
     background-color: ${(props) => props.theme.body};
-    transition: background-color 0.3s ease;
   }
 
 `;

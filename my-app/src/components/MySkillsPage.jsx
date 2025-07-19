@@ -47,8 +47,6 @@ const Main = styled(motion.div)`
   flex-direction: column;
   justify-content: space-between;
 
-  position: fixed;
-
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};

@@ -7,7 +7,7 @@ import SocialIcons from "../subComponents/SocialIcons";
 import ParticleComponent from "../subComponents/ParticleComponent";
 import BigTitle from "../subComponents/BigTitle";
 import spaceman from "../assets/astronaut.png";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Box = styled(motion.div)`
   background-color: ${(props) => props.theme.body};
