@@ -30,7 +30,7 @@ const FloatWrapper = styled.div`
 `;
 
 const Astronaut = styled(motion.div)`
-  position: absolute;
+  position: fixed;
   top: 10%;
   right: 5%;
   width: 20vw;
@@ -75,14 +75,14 @@ const Main = styled.div`
   @media (max-width: 768px) {
     height: 65vh;
     left: calc(7rem + 6vw);
-    font-size: calc(0.8rem + 1.4vw);
+    font-size: calc(0.6rem + 1.4vw);
     top: 9rem;
   }
 
   @media (max-width: 480px) {
     height: 55vh;
     left: calc(3.5rem + 3.5vw);
-    font-size: calc(0.7rem + 1.2vw);
+    font-size: calc(0.6rem + 1.2vw);
     top: 11rem;
   }
 `;

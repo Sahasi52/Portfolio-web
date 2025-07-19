@@ -37,12 +37,12 @@ const Main = styled(motion.ul)`
   z-index: 5;
 
   @media (max-width: 768px) {
-    margin-top: 6rem;
+    margin-top: 3rem;
     padding: 1rem;
   }
 
   @media (max-width: 480px) {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     padding: 1rem;
   }
 `;

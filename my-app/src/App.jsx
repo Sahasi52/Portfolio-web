@@ -6,10 +6,16 @@ import { Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import SoundBar from "./subComponents/SoundBar";
 import Loading from "./subComponents/LoadingComponent";
+import ScrollWrapper from "./subComponents/ScrollWrapper";
 
 function App() {
   const location = useLocation();
   const [isLoading, setLoading] = useState(true);
+
+  const scrollablePages = ["/myskills", "/work"];
+  const isScrollable = scrollablePages.includes(
+    location.pathname.toLowerCase()
+  );
 
   //  useEffect(() => {
   //     // Show loading on initial load
@@ -40,9 +46,11 @@ function App() {
           <Loading />
         ) : (
           <Suspense fallback={<Loading />}>
-            <AnimatePresence mode="wait">
-              <Outlet location={location} key={location.pathname} />
-            </AnimatePresence>
+            <ScrollWrapper scrollable={isScrollable}>
+              <AnimatePresence mode="wait">
+                <Outlet location={location} key={location.pathname} />
+              </AnimatePresence>
+            </ScrollWrapper>
           </Suspense>
         )}
       </>
