@@ -10,12 +10,12 @@ import Loading from "./subComponents/LoadingComponent";
 function App() {
   const location = useLocation();
   const [isLoading, setLoading] = useState(true);
-  const scrollablePages = ["/", "/about"];
 
   useEffect(() => {
     const currentPath = location.pathname.toLowerCase();
-    const isScrollable = scrollablePages.includes(currentPath);
-    document.body.style.overflowY = isScrollable ? "auto" : "hidden";
+    const nonScrollablePages = ["/", "/about"];
+    const isNonScrollable = nonScrollablePages.includes(currentPath);
+    document.body.style.overflowY = isNonScrollable ? "hidden" : "auto";
 
     return () => {
       document.body.style.overflowY = "auto";
