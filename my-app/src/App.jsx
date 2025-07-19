@@ -12,17 +12,6 @@ function App() {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    const currentPath = location.pathname.toLowerCase();
-    const nonScrollablePages = ["/", "/about"];
-    const isNonScrollable = nonScrollablePages.includes(currentPath);
-    document.body.style.overflowY = isNonScrollable ? "hidden" : "auto";
-
-    return () => {
-      document.body.style.overflowY = "auto";
-    };
-  }, [location.pathname]);
-
-  useEffect(() => {
     setLoading(true);
 
     const timer = setTimeout(() => {

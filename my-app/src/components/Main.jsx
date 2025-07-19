@@ -6,14 +6,14 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { NavLink } from "react-router-dom";
 import { CrestKamon } from "./AllSvgs";
 import Intro from "./Intro";
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const MainContainer = styled(motion.div)`
   background: ${(props) => props.theme.body};
   width: 100vw;
   min-height: 100svh;
   overflow: hidden;
-  position: relative;
+  position: fixed;
 
   h2,
   h3,
