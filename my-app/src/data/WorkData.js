@@ -27,16 +27,16 @@ export const Work = [
     description:
       "A simple, responsive weather app using HTML, CSS, and JavaScript that shows real-time weather for any city using the OpenWeatherMap API.",
     tags: ["HTML", "CSS", "JavaScript"],
-    demo: "https://weather-forecast-webb.netlify.app/",
+    demo: "https://sunnycloud-web.netlify.app/",
     github: "https://github.com/Sahasi52/Weather-Forecast-web",
   },
   {
     id: 4,
-    name: "Portfolio Website",
+    name: "E commerce Website",
     description:
-      "A minimal React portfolio website using Framer Motion for smooth animations and Styled-Components for clean, component-based styling.",
-    tags: ["React", "JavaScript"],
-    demo: "https://portfolio-webbb.netlify.app/",
-    github: "https://github.com/Sahasi52/Portfolio-web",
+      "A basic and responsive online shop front-end made using HTML, CSS, and JavaScript.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    demo: "https://dewdropz-web.netlify.app/",
+    github: "https://github.com/Sahasi52/Ecommerce-web",
   },
 ];
