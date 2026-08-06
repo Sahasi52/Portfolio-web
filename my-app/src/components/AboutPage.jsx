@@ -126,6 +126,8 @@ const AboutPage = () => {
             <img
               src={spaceman}
               alt="Floating astronaut representing exploration"
+              loading="eager"
+              fetchPriority="high"
             />
           </FloatWrapper>
         </Astronaut>
